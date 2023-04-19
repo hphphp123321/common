@@ -40,12 +40,12 @@ func Max[T Comparable[T]](o ...T) T {
 	return o[maxIndex]
 }
 
-// MaxSlice MaxSlice[Comparable[T]]
+// SliceMax SliceMax[Comparable[T]]
 //
 //	@Description: returns the max value in the slice.
 //	@param o []T
 //	@return T
-func MaxSlice[T Comparable[T]](o []T) T {
+func SliceMax[T Comparable[T]](o []T) T {
 	return Max(o...)
 }
 
@@ -68,12 +68,12 @@ func Min[T Comparable[T]](o []T) T {
 	return o[maxIndex]
 }
 
-// MinSlice MinSlice[Comparable[T]]
+// SliceMin SliceMin[Comparable[T]]
 //
 //	@Description: returns the min value in the slice.
 //	@param o []T
 //	@return T
-func MinSlice[T Comparable[T]](o []T) T {
+func SliceMin[T Comparable[T]](o []T) T {
 	return Min(o)
 }
 
@@ -257,13 +257,13 @@ func Remove[T comparable](target []T, obj T) ([]T, error) {
 	return target, ErrNotFound
 }
 
-// EqualSlice EqualSlice[T comparable]
+// SliceEqual SliceEqual[T comparable]
 //
 //	@Description: checks if the two slices are equal.
 //	@param obj1 []T
 //	@param obj2 []T
 //	@return bool true if the two slices are equal
-func EqualSlice[T comparable](obj1 []T, obj2 []T) bool {
+func SliceEqual[T comparable](obj1 []T, obj2 []T) bool {
 	if len(obj1) != len(obj2) {
 		return false
 	}
@@ -275,13 +275,13 @@ func EqualSlice[T comparable](obj1 []T, obj2 []T) bool {
 	return true
 }
 
-// EqualMap EqualMap[T1, T2 comparable]
+// MapEqual MapEqual[T1, T2 comparable]
 //
 //	@Description: checks if the two maps are equal.
 //	@param obj1 map[T1]T2
 //	@param obj2 map[T1]T2
 //	@return bool true if the two maps are equal
-func EqualMap[T1, T2 comparable](obj1 map[T1]T2, obj2 map[T1]T2) bool {
+func MapEqual[T1, T2 comparable](obj1 map[T1]T2, obj2 map[T1]T2) bool {
 	if len(obj1) != len(obj2) {
 		return false
 	}
